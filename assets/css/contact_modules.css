@@ -1,0 +1,791 @@
+/* ==========================================================================
+   Vince Roadline Contact & Tracking Page Modules (contact_modules.css)
+   Includes: Office Address Cards, Form Input Groups, Compact Quote Modal,
+   and Shipment Tracking Modules
+   Uses Brand CSS Variables from navigation.css
+   ========================================================================== */
+
+/* Overall Section Spacing */
+.contact-section {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    color: var(--vrl-body-text, #333333);
+}
+
+.vrl-contact-subtitle-max {
+    max-width: 580px;
+}
+
+/* Office Location Card Enhancements */
+.vrl-contact-office-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 24px;
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    padding: 34px 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.vrl-contact-office-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.vrl-contact-office-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(214, 4, 18, 0.12);
+    border-color: rgba(214, 4, 18, 0.25);
+}
+
+.vrl-contact-office-card:hover::before {
+    background: linear-gradient(90deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-accent-yellow, #FFB800) 100%);
+}
+
+.vrl-contact-icon-box {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.55rem;
+    flex-shrink: 0;
+    transition: all 0.35s ease;
+}
+
+.vrl-contact-office-card:hover .vrl-contact-icon-box {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    border-color: var(--vrl-primary-red, #D60412);
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 6px 16px rgba(214, 4, 18, 0.3);
+}
+
+.vrl-office-address-block {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    border-left: 4px solid var(--vrl-primary-red, #D60412);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.vrl-office-address-block.vrl-branch-border {
+    border-left-color: var(--vrl-accent-yellow, #FFB800);
+}
+
+.vrl-office-comp-pill {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    display: inline-block;
+}
+
+.vrl-office-meta-pill {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--vrl-dark-text, #111111);
+    transition: all 0.3s ease;
+}
+
+.vrl-office-meta-pill:hover {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border-color: rgba(214, 4, 18, 0.25);
+}
+
+.vrl-office-link-call {
+    color: var(--vrl-primary-red, #D60412);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.vrl-office-link-call:hover {
+    color: var(--vrl-primary-red-dark, #b8030f);
+    text-decoration: underline;
+}
+
+.vrl-office-link-map {
+    color: var(--vrl-dark-text, #111111);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.vrl-office-link-map:hover {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+/* Clean Light Card for Contact Channels */
+.vrl-contact-light-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 24px;
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    padding: 34px 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    height: 100%;
+}
+
+.vrl-contact-clean-channel {
+    background: var(--vrl-white, #ffffff);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    border-radius: 18px;
+    padding: 16px 20px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none !important;
+}
+
+.vrl-contact-clean-channel:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214, 4, 18, 0.25);
+    box-shadow: 0 12px 30px rgba(214, 4, 18, 0.1);
+}
+
+.vrl-clean-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.vrl-clean-icon-whatsapp {
+    background-color: #e8f5e9 !important;
+    border-color: #a5d6a7 !important;
+    color: #2e7d32 !important;
+}
+
+.vrl-contact-clean-channel:hover .vrl-clean-icon {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    border-color: var(--vrl-primary-red, #D60412);
+    transform: scale(1.08) rotate(5deg);
+}
+
+.vrl-channel-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.vrl-channel-arrow-whatsapp {
+    background-color: #e8f5e9 !important;
+    color: #2e7d32 !important;
+}
+
+.vrl-contact-clean-channel:hover .vrl-channel-arrow {
+    background-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: translateX(3px);
+}
+
+/* Premium Form Card */
+.vrl-contact-form-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 24px;
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    padding: 38px 34px;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.vrl-form-header-bar {
+    border-left: 4px solid var(--vrl-primary-red, #D60412);
+    padding-left: 16px;
+}
+
+/* Stylish Form Input Groups & Error Handling */
+.vrl-input-group-stylish {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border-radius: 14px;
+    border: 1.5px solid var(--vrl-border-light, #eef0f3);
+    background-color: var(--vrl-white, #ffffff);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.vrl-input-group-stylish:focus-within {
+    border-color: var(--vrl-primary-red, #D60412);
+    box-shadow: 0 6px 22px rgba(214, 4, 18, 0.14);
+    transform: translateY(-2px);
+}
+
+/* Error State Highlights */
+.vrl-input-group-stylish:has(input.error),
+.vrl-input-group-stylish:has(select.error),
+.vrl-input-group-stylish:has(textarea.error),
+.vrl-input-group-stylish.has-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15) !important;
+}
+
+.vrl-input-group-stylish:has(input.error) .vrl-input-addon,
+.vrl-input-group-stylish:has(select.error) .vrl-input-addon,
+.vrl-input-group-stylish:has(textarea.error) .vrl-input-addon {
+    background-color: #f8d7da !important;
+    color: #dc3545 !important;
+    border-right-color: rgba(220, 53, 69, 0.2) !important;
+}
+
+.vrl-input-addon {
+    width: 48px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border-right: 1px solid var(--vrl-border-light, #eef0f3);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.vrl-input-group-stylish:focus-within .vrl-input-addon {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    border-color: var(--vrl-primary-red, #D60412);
+}
+
+.vrl-input-field {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 11px 15px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--vrl-dark-text, #111111);
+    flex: 1 1 auto;
+    width: 1% !important;
+    min-width: 0;
+}
+
+.vrl-input-field::placeholder {
+    color: #999999;
+    font-weight: 400;
+}
+
+/* jQuery Validation Error Label Styling */
+.vrl-input-group-stylish label.error,
+.vrl-input-group-stylish span.error,
+label.error {
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    padding: 6px 14px;
+    background-color: #fff0f1;
+    border-top: 1px solid rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: block;
+}
+
+.vrl-contact-submit-btn {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    border: none;
+    border-radius: 50px;
+    padding: 13px 28px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(214, 4, 18, 0.25);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.vrl-contact-submit-btn:hover {
+    background: linear-gradient(135deg, var(--vrl-primary-red-dark, #b8030f) 0%, #90000a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(214, 4, 18, 0.35);
+}
+
+/* Custom Compact Quote Modal Styling */
+.vrl-modal-dialog-custom {
+    max-width: 540px;
+    margin: 1.25rem auto;
+}
+
+.vrl-modal-content-custom {
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+}
+
+.vrl-modal-header-custom {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    padding: 18px 24px;
+    position: relative;
+}
+
+.vrl-modal-header-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--vrl-accent-yellow, #FFB800);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    display: inline-block;
+}
+
+.vrl-modal-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.vrl-modal-close-btn:hover {
+    background: #ffffff;
+    color: var(--vrl-primary-red, #D60412);
+    transform: rotate(90deg);
+}
+
+.vrl-modal-body-custom {
+    padding: 18px 22px;
+}
+
+.vrl-modal-body-custom .vrl-input-addon {
+    width: 42px;
+    font-size: 0.95rem;
+}
+
+.vrl-modal-body-custom .vrl-input-field {
+    padding: 8px 12px;
+    font-size: 0.88rem;
+}
+
+.vrl-modal-clear-btn {
+    background: transparent;
+    border: 1.5px solid var(--vrl-border-light, #eef0f3);
+    color: var(--vrl-body-text, #666666);
+    border-radius: 50px;
+    padding: 11px 22px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.vrl-modal-clear-btn:hover {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    color: var(--vrl-dark-text, #111111);
+    border-color: #ccc;
+}
+
+/* ==========================================================================
+   TRACKING PAGE MODULE STYLES (Redesigned & Ultra Modern)
+   ========================================================================== */
+
+/* Main Premium Tracking Search Card */
+.premium-tracking-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #f1f5f9;
+}
+
+/* Top Red & Yellow Gradient Accent Bar */
+.premium-tracking-accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #d9232d 0%, #ffb800 100%);
+}
+
+.premium-tracking-title {
+    color: #111111;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.premium-tracking-desc {
+    color: #64748b;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+}
+
+/* Tracking Input Field */
+.premium-tracking-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.premium-tracking-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D60412;
+    font-size: 1.1rem;
+}
+
+.premium-tracking-input {
+    padding-left: 55px !important;
+    border-radius: 50px !important;
+    border: 2px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    font-size: 16px !important;
+    height: 54px !important;
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    transition: all 0.3s ease !important;
+}
+
+.premium-tracking-input:focus {
+    border-color: #D60412 !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(214, 4, 18, 0.1) !important;
+}
+
+/* Track Now Button */
+.premium-tracking-btn {
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, #D60412 0%, #b8030f 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    height: 54px !important;
+    min-width: 150px !important;
+    box-shadow: 0 4px 15px rgba(214, 4, 18, 0.25) !important;
+}
+
+.premium-tracking-btn:hover {
+    background: linear-gradient(135deg, #b8030f 0%, #90000a 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(214, 4, 18, 0.35) !important;
+    color: #ffffff !important;
+}
+
+/* Clear Reset Button */
+.premium-clear-btn {
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 50% !important;
+    border: 2px solid #e2e8f0 !important;
+    color: #64748b !important;
+    transition: all 0.3s ease !important;
+    background: #f8fafc !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.premium-clear-btn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    transform: rotate(90deg) !important;
+}
+
+/* ==========================================================================
+   Redesigned Tracking Details Results Dashboard
+   ========================================================================== */
+
+.contact-tracking-details-card .card {
+    border-radius: 24px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #edf2f7 !important;
+    background: #ffffff;
+}
+
+.vrl-track-header-gradient {
+    background: linear-gradient(135deg, #D60412 0%, #b8030f 100%) !important;
+    border-bottom: 3px solid #ffb800 !important;
+}
+
+.vrl-track-header-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+/* Micro Info Cards Grid */
+.vrl-track-info-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px 14px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-column: column;
+    justify-content: center;
+}
+
+.vrl-track-info-card:hover {
+    background: #ffffff;
+    border-color: #D60412;
+    box-shadow: 0 8px 20px rgba(214, 4, 18, 0.08);
+    transform: translateY(-3px);
+}
+
+.vrl-track-info-card.accent-red {
+    background: #fff5f5;
+    border-color: rgba(214, 4, 18, 0.2);
+}
+
+.vrl-track-info-card.accent-green {
+    background: #f0fdf4;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.vrl-track-info-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.vrl-track-info-icon.border-red {
+    background: #fff5f5;
+    color: #D60412;
+    border: 1px solid rgba(214, 4, 18, 0.2);
+}
+
+.vrl-track-info-icon.border-yellow {
+    background: #fffbeb;
+    color: #d97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.vrl-track-info-icon.border-green {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.vrl-track-info-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.vrl-track-info-val {
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+/* Timeline Progress Card */
+.vrl-track-progress-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-tracking-progress {
+    margin: 25px 0 10px;
+    padding: 10px 0;
+}
+
+.contact-progress-bar-container {
+    position: relative;
+}
+
+.contact-progress {
+    height: 10px;
+    background-color: #cbd5e1;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.contact-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #D60412 0%, #ffb800 100%);
+    border-radius: 10px;
+    transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 0%;
+}
+
+.contact-progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+}
+
+.contact-step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 3px solid #cbd5e1;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin: 0 auto 10px;
+    transition: all 0.35s ease;
+}
+
+.contact-step.completed .contact-step-icon {
+    background-color: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+
+.contact-step.active .contact-step-icon {
+    background: linear-gradient(135deg, #D60412 0%, #b8030f 100%);
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0 0 0 6px rgba(214, 4, 18, 0.25);
+    transform: scale(1.18);
+}
+
+.contact-step-label {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #475569;
+    margin-bottom: 3px;
+}
+
+.contact-step.completed .contact-step-label {
+    color: #059669;
+}
+
+.contact-step.active .contact-step-label {
+    color: #D60412;
+}
+
+.contact-step-date {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* History Table Styling */
+.vrl-track-history-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+.vrl-track-table-head {
+    background-color: #f1f5f9;
+}
+
+.vrl-track-table-head th {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #334155;
+    padding: 14px 16px;
+    border: none;
+}
+
+.contact-tracking-table td {
+    padding: 14px 16px;
+    color: #1e293b;
+    font-size: 0.92rem;
+}
+
+/* Support Callout Banner */
+.vrl-track-support-banner {
+    background: linear-gradient(135deg, #fcfcfc 0%, #fff5f5 100%);
+    border: 1.5px solid rgba(214, 4, 18, 0.15);
+}
+
+.vrl-track-support-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #D60412 0%, #b8030f 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(214, 4, 18, 0.3);
+    flex-shrink: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 991.98px) {
+    .vrl-contact-form-card, .vrl-contact-light-card, .vrl-contact-office-card, .premium-tracking-card {
+        padding: 24px 18px;
+    }
+}

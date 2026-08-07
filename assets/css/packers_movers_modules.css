@@ -1,0 +1,1427 @@
+/* ==========================================================================
+   Packers & Movers State Cards Module
+   ========================================================================== */
+
+.pm-states-section {
+    background: linear-gradient(180deg, var(--vrl-light-bg, #fcfcfc) 0%, #f4f5f8 100%);
+    position: relative;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+/* Header Styling */
+.pm-states-header {
+    margin-bottom: 3rem;
+}
+
+.pm-states-title {
+    color: var(--vrl-dark-text, #111111);
+    font-size: 2.35rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.pm-states-title-highlight {
+    color: var(--vrl-primary-red, #D60412);
+    position: relative;
+    display: inline-block;
+}
+
+.pm-states-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--vrl-primary-red, #D60412), var(--vrl-accent-yellow, #FFB800));
+    border-radius: 2px;
+}
+
+.pm-states-subtitle {
+    color: var(--vrl-muted-text, #444444);
+    font-size: 1.05rem;
+    max-width: 540px;
+    font-weight: 400;
+}
+
+/* Card Link & Wrapper */
+.pm-states-card-link {
+    display: block;
+    color: inherit;
+    height: 100%;
+}
+
+.pm-states-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pm-states-card-link:hover .pm-states-card {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(214, 4, 18, 0.16);
+    border-color: rgba(214, 4, 18, 0.3);
+}
+
+/* Image Section */
+.pm-states-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    background-color: var(--vrl-top-bg, #0e0e0e);
+}
+
+.pm-states-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-states-card-link:hover .pm-states-img {
+    transform: scale(1.09);
+}
+
+.pm-states-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    transition: background 0.4s ease;
+}
+
+.pm-states-card-link:hover .pm-states-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(214, 4, 18, 0.35) 100%);
+}
+
+/* Floating Badge */
+.pm-states-top-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    color: var(--vrl-dark-text, #111111);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.pm-states-top-badge i {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+.pm-states-card-link:hover .pm-states-top-badge {
+    background: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-states-card-link:hover .pm-states-top-badge i {
+    color: var(--vrl-accent-yellow, #FFB800);
+}
+
+/* Card Body */
+.pm-states-body {
+    padding: 20px 22px;
+    background: var(--vrl-white, #ffffff);
+    transition: background-color 0.3s ease;
+}
+
+.pm-states-card-link:hover .pm-states-body {
+    background: var(--vrl-hover-red-bg, #fff5f5);
+}
+
+.pm-states-accent-bar {
+    width: 4px;
+    height: 38px;
+    background: linear-gradient(180deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-accent-yellow, #FFB800) 100%);
+    border-radius: 4px;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.pm-states-card-link:hover .pm-states-accent-bar {
+    transform: scaleY(1.15);
+}
+
+.pm-states-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--vrl-dark-text, #111111);
+    transition: color 0.3s ease;
+}
+
+.pm-states-card-link:hover .pm-states-name {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+.pm-states-subtext {
+    font-size: 0.82rem;
+    color: var(--vrl-muted-text, #444444);
+    font-weight: 500;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Arrow Circle Button */
+.pm-states-circle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-states-card-link:hover .pm-states-circle-btn {
+    background-color: var(--vrl-primary-red, #D60412);
+    border-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: translateX(4px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(214, 4, 18, 0.3);
+}
+
+/* Responsiveness */
+@media (max-width: 991.98px) {
+    .pm-states-img-wrapper {
+        height: 200px;
+    }
+    .pm-states-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pm-states-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .pm-states-img-wrapper {
+        height: 190px;
+    }
+    .pm-states-body {
+        padding: 16px 18px;
+    }
+    .pm-states-name {
+        font-size: 1.18rem;
+    }
+    .pm-states-subtext {
+        font-size: 0.82rem;
+    }
+    .pm-states-circle-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 0.98rem;
+    }
+    .pm-states-title {
+        font-size: 1.65rem;
+    }
+}
+
+
+/* ==========================================================================
+   Packers & Movers City List Section
+   ========================================================================== */
+
+.pm-list-service-page {
+    background: linear-gradient(180deg, var(--vrl-light-bg, #fcfcfc) 0%, #f4f5f8 100%);
+    position: relative;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+}
+
+.pm-list-tag {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(214, 4, 18, 0.15);
+}
+
+.pm-list-title {
+    color: var(--vrl-dark-text, #111111);
+    font-size: 2.15rem;
+    font-weight: 800;
+}
+
+.pm-list-title-highlight {
+    color: var(--vrl-primary-red, #D60412);
+    position: relative;
+    display: inline-block;
+}
+
+.pm-list-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--vrl-primary-red, #D60412), var(--vrl-accent-yellow, #FFB800));
+    border-radius: 2px;
+}
+
+.pm-list-subtitle {
+    color: var(--vrl-muted-text, #444444);
+    font-size: 1rem;
+    max-width: 520px;
+}
+
+/* City Card Link & Box */
+.pm-list-city-card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+}
+
+.pm-list-city-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 14px;
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    padding: 16px 18px;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top Accent Line on Hover */
+.pm-list-city-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.pm-list-city-card-link:hover .pm-list-city-card {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(214, 4, 18, 0.12);
+    border-color: rgba(214, 4, 18, 0.2);
+}
+
+.pm-list-city-card-link:hover .pm-list-city-card::before {
+    background: linear-gradient(90deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-accent-yellow, #FFB800) 100%);
+}
+
+/* Sharp Single Icon Box */
+.pm-list-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    color: var(--vrl-primary-red, #D60412);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-list-city-card-link:hover .pm-list-icon-wrapper {
+    background-color: var(--vrl-primary-red, #D60412);
+    border-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(214, 4, 18, 0.25);
+}
+
+/* City Info Typography */
+.pm-list-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--vrl-muted-text, #444444);
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.pm-list-city-name {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--vrl-dark-text, #111111);
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+.pm-list-city-card-link:hover .pm-list-city-name {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+/* Arrow Box */
+.pm-list-arrow-box {
+    color: #cccccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.pm-list-city-card-link:hover .pm-list-arrow-box {
+    color: var(--vrl-primary-red, #D60412);
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .pm-list-title {
+        font-size: 1.85rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pm-list-city-card {
+        padding: 12px 14px;
+    }
+    .pm-list-icon-wrapper {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+        border-radius: 10px;
+    }
+    .pm-list-city-name {
+        font-size: 0.95rem;
+    }
+    .pm-list-label {
+        font-size: 0.68rem;
+    }
+}
+
+
+/* ==========================================================================
+   City Page Design Module (city_slider, city_about, city_content, etc.)
+   ========================================================================== */
+
+/* Layout & Sticky Mechanics */
+.pm-sidebar-sticky {
+    top: 120px;
+    z-index: 10;
+}
+
+.hero-text-col {
+    z-index: 3;
+}
+
+/* Hero Banner Section */
+.pm-city-hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--vrl-top-bg, #0e0e0e);
+    color: var(--vrl-white, #ffffff);
+    min-height: 480px;
+}
+
+.pm-city-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(14, 14, 14, 0.92) 0%, rgba(214, 4, 18, 0.75) 100%);
+    z-index: 1;
+}
+
+.pm-city-bc-nav {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.pm-city-bc-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pm-city-bc-nav a:hover {
+    color: var(--vrl-accent-yellow, #FFB800);
+}
+
+.pm-city-bc-nav .bc-sep {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pm-city-bc-nav .bc-current {
+    color: var(--vrl-accent-yellow, #FFB800);
+    font-weight: 600;
+}
+
+.pm-city-eyebrow {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-city-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--vrl-accent-yellow, #FFB800);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.3);
+}
+
+.pm-city-hero-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-city-title-highlight {
+    color: var(--vrl-accent-yellow, #FFB800);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pm-city-hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.pm-city-pill-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-city-hero-call-btn {
+    background: var(--vrl-white, #ffffff);
+    color: var(--vrl-dark-text, #111111);
+    padding: 8px 22px 8px 10px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pm-city-hero-call-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background: var(--vrl-accent-yellow, #FFB800);
+}
+
+.pm-city-call-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.pm-city-call-info small {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--vrl-muted-text, #444444);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.pm-city-call-info strong {
+    font-size: 1.05rem;
+    color: var(--vrl-dark-text, #111111);
+}
+
+.pm-city-trust-badge-pill {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-city-stars {
+    color: var(--vrl-accent-yellow, #FFB800);
+}
+
+.pm-city-form-wrapper {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.pm-city-mobile-trust {
+    background-color: var(--vrl-white, #ffffff);
+    border-bottom: 1px solid var(--vrl-divider-color, #e0e0e0);
+}
+
+.pm-mobile-trust-item {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--vrl-dark-text, #111111);
+}
+
+/* Main Details & Process Workflow Items */
+.pm-city-details-section {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+}
+
+.pm-process-item {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    border-left: 4px solid var(--vrl-primary-red, #D60412) !important;
+    border-radius: 14px;
+    padding: 20px 24px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-process-item:hover {
+    background-color: var(--vrl-white, #ffffff);
+    box-shadow: 0 10px 28px rgba(214, 4, 18, 0.08);
+    transform: translateX(4px);
+}
+
+.pm-process-step-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    font-weight: 800;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(214, 4, 18, 0.3);
+}
+
+.pm-about-intro-p {
+    line-height: 1.7;
+}
+
+.pm-flow-step p {
+    line-height: 1.5;
+}
+
+.pm-service-item p,
+.pm-why-card p {
+    line-height: 1.6;
+}
+
+.pm-service-section-desc {
+    max-width: 500px;
+}
+
+.pm-city-srv-icon-wrap img {
+    height: 140px;
+}
+
+.pm-tst-z2 {
+    z-index: 2;
+}
+
+.pm-city-tag {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    border: 1px solid rgba(214, 4, 18, 0.15);
+}
+
+.pm-city-section-title {
+    font-size: 2.1rem;
+    color: var(--vrl-dark-text, #111111);
+}
+
+.pm-city-accent-text {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+/* Premium Logo-Themed Rate Guide Card */
+.pm-rate-guide-card {
+    background: var(--vrl-white, #ffffff);
+    border-radius: 20px;
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.pm-rate-guide-card:hover {
+    box-shadow: 0 20px 40px rgba(214, 4, 18, 0.12);
+    border-color: rgba(214, 4, 18, 0.25);
+}
+
+.pm-rate-guide-header {
+    background: linear-gradient(135deg, var(--vrl-top-bg, #0e0e0e) 0%, var(--vrl-primary-red, #D60412) 100%);
+    padding: 18px 20px;
+    color: var(--vrl-white, #ffffff);
+    position: relative;
+}
+
+.pm-rate-guide-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--vrl-accent-yellow, #FFB800) 0%, var(--vrl-primary-red, #D60412) 100%);
+}
+
+.pm-rate-item-box {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    border-radius: 14px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.pm-rate-item-box:hover {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border-color: rgba(214, 4, 18, 0.2);
+    transform: translateX(4px);
+}
+
+.pm-rate-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 12px rgba(214, 4, 18, 0.25);
+    flex-shrink: 0;
+}
+
+.pm-rate-price-tag {
+    background: var(--vrl-top-bg, #0e0e0e);
+    color: var(--vrl-accent-yellow, #FFB800);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 5px 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 184, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.pm-rate-cta-btn {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff) !important;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(214, 4, 18, 0.3);
+    transition: all 0.3s ease;
+}
+
+.pm-rate-cta-btn:hover {
+    background: linear-gradient(135deg, var(--vrl-top-bg, #0e0e0e) 0%, var(--vrl-primary-red, #D60412) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(214, 4, 18, 0.4);
+}
+
+/* Modern Process Flow Badge Styling */
+.pm-flow-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(214, 4, 18, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.pm-flow-num {
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.pm-flow-step {
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-flow-step:hover {
+    transform: translateY(-5px);
+    background-color: var(--vrl-white, #ffffff) !important;
+    box-shadow: 0 10px 24px rgba(214, 4, 18, 0.1) !important;
+}
+
+.pm-flow-step:hover .pm-flow-badge {
+    transform: scale(1.1);
+}
+
+/* Spacious & Elegant Service Item Circle Icon Styling */
+.pm-service-item {
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.pm-service-item:hover {
+    transform: translateY(-4px);
+    background-color: var(--vrl-white, #ffffff) !important;
+    box-shadow: 0 12px 28px rgba(214, 4, 18, 0.12) !important;
+}
+
+.pm-service-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    transition: all 0.35s ease;
+}
+
+.pm-service-item:hover .pm-service-icon-circle {
+    background-color: var(--vrl-primary-red, #D60412);
+    border-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: scale(1.08);
+}
+
+/* Why Choose Us Feature Cards Styling */
+.pm-why-card {
+    background: var(--vrl-white, #ffffff);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.pm-why-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.pm-why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(214, 4, 18, 0.12);
+    border-color: rgba(214, 4, 18, 0.25);
+}
+
+.pm-why-card:hover::before {
+    background: linear-gradient(90deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-accent-yellow, #FFB800) 100%);
+}
+
+.pm-why-icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.65rem;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-why-card:hover .pm-why-icon-box {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    border-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 6px 16px rgba(214, 4, 18, 0.3);
+}
+
+/* Animated Live Support Sidebar Card (Black & Crimson Red Gradient) */
+.pm-sidebar-live-card {
+    background: linear-gradient(135deg, var(--vrl-top-bg, #0e0e0e) 0%, var(--vrl-primary-red, #D60412) 100%) !important;
+    border: 1px solid rgba(255, 184, 0, 0.3) !important;
+    box-shadow: 0 16px 40px rgba(214, 4, 18, 0.25) !important;
+    transition: all 0.35s ease;
+}
+
+.pm-helpline-tag-text {
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+}
+
+.pm-live-card-desc {
+    line-height: 1.6;
+    font-size: 0.88rem;
+    opacity: 0.95;
+}
+
+.pm-live-card-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 184, 0, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.pm-live-call-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%) !important;
+    color: var(--vrl-dark-text, #111111) !important;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    animation: callPulse 2.5s infinite;
+    transition: all 0.3s ease;
+}
+
+.pm-live-call-btn:hover {
+    background: var(--vrl-accent-yellow, #FFB800) !important;
+    color: var(--vrl-dark-text, #111111) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(255, 184, 0, 0.45) !important;
+}
+
+.pm-live-call-btn:hover .pm-phone-ring-icon {
+    animation: phoneRing 0.8s ease-in-out infinite;
+}
+
+.pm-live-wa-btn {
+    background-color: #25D366 !important;
+    color: var(--vrl-white, #ffffff) !important;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
+    transition: all 0.3s ease;
+}
+
+.pm-live-wa-btn:hover {
+    background-color: #1eb956 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5) !important;
+}
+
+.pm-live-wa-btn:hover .pm-wa-icon {
+    transform: rotate(15deg) scale(1.15);
+}
+
+.pm-wa-icon {
+    transition: transform 0.3s ease;
+}
+
+/* CTA Action Box & Buttons */
+.pm-about-cta-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+}
+
+.pm-cta-call-btn {
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    box-shadow: 0 6px 20px rgba(214, 4, 18, 0.28);
+    transition: all 0.3s ease;
+}
+
+.pm-cta-call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(214, 4, 18, 0.4);
+}
+
+.pm-cta-phone-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--vrl-white, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.pm-cta-quote-btn {
+    background-color: var(--vrl-accent-yellow, #FFB800) !important;
+    color: var(--vrl-dark-text, #111111) !important;
+    transition: all 0.3s ease;
+}
+
+.pm-cta-quote-btn:hover {
+    background-color: #ffa800 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 184, 0, 0.35) !important;
+}
+
+.city-section-title-sm {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--vrl-dark-text, #111111);
+}
+
+.city-check-item {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+}
+
+.city-check-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.city-feature-box {
+    background-color: var(--vrl-light-bg, #fcfcfc);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+}
+
+.feature-box-icon {
+    font-size: 2rem;
+    color: var(--vrl-primary-red, #D60412);
+    display: block;
+}
+
+/* About Swappable Image Slider */
+.pm-about-slide-img {
+    height: 390px;
+    object-fit: cover;
+}
+
+.pm-about-slide-caption {
+    background: rgba(14, 14, 14, 0.75);
+    backdrop-filter: blur(8px);
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pm-about-carousel-btn {
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.95;
+}
+
+.pm-carousel-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--vrl-dark-text, #111111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.pm-about-carousel-btn:hover .pm-carousel-icon {
+    background: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+}
+
+.pm-about-badge-overlay {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(14, 14, 14, 0.82);
+    backdrop-filter: blur(8px);
+    color: var(--vrl-white, #ffffff);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Testimonials Carousel Styling */
+.pm-tst-eyebrow {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    border: 1px solid rgba(214, 4, 18, 0.15);
+}
+
+.pm-tst-heading {
+    font-size: 1.65rem;
+    letter-spacing: -0.3px;
+}
+
+.pm-tst-accent-text {
+    color: var(--vrl-primary-red, #D60412);
+}
+
+.pm-tst-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--vrl-white, #ffffff);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    color: var(--vrl-dark-text, #111111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-tst-nav-btn:hover {
+    background-color: var(--vrl-primary-red, #D60412);
+    border-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(214, 4, 18, 0.25);
+}
+
+.pm-tst-card {
+    background: linear-gradient(180deg, #ffffff 0%, var(--vrl-light-bg, #fcfcfc) 100%);
+    border: 1px solid var(--vrl-border-light, #f2f2f2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.pm-tst-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(214, 4, 18, 0.12);
+    border-color: rgba(214, 4, 18, 0.25);
+}
+
+.pm-tst-watermark {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 4.8rem;
+    color: rgba(214, 4, 18, 0.07);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pm-tst-badge {
+    background-color: var(--vrl-hover-red-bg, #fff5f5);
+    color: var(--vrl-primary-red, #D60412);
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    border: 1px solid rgba(214, 4, 18, 0.15);
+}
+
+.pm-tst-quote-text {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: var(--vrl-body-text, #333333);
+}
+
+.pm-tst-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--vrl-primary-red, #D60412) 0%, var(--vrl-primary-red-dark, #b8030f) 100%);
+    color: var(--vrl-white, #ffffff);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(214, 4, 18, 0.25);
+}
+
+.pm-tst-avatar-alt {
+    background: linear-gradient(135deg, var(--vrl-top-bg, #0e0e0e) 0%, var(--vrl-primary-red, #D60412) 100%);
+}
+
+.pm-tst-dot {
+    width: 28px !important;
+    height: 4px !important;
+    border-radius: 2px !important;
+    background-color: var(--vrl-divider-color, #e0e0e0) !important;
+    border: none !important;
+    opacity: 0.6 !important;
+    transition: all 0.3s ease !important;
+}
+
+.pm-tst-dot.active {
+    background-color: var(--vrl-primary-red, #D60412) !important;
+    width: 44px !important;
+    opacity: 1 !important;
+}
+
+/* FAQ Accordion Styling */
+.pm-faq-item {
+    background-color: var(--vrl-white, #ffffff);
+    transition: all 0.35s ease;
+}
+
+.pm-faq-item:hover {
+    border-color: rgba(214, 4, 18, 0.25) !important;
+    box-shadow: 0 8px 20px rgba(214, 4, 18, 0.08) !important;
+}
+
+.pm-faq-button {
+    background-color: var(--vrl-white, #ffffff) !important;
+    color: var(--vrl-dark-text, #111111) !important;
+    padding: 18px 22px !important;
+    font-size: 1.02rem;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.pm-faq-button:not(.collapsed) {
+    color: var(--vrl-primary-red, #D60412) !important;
+    background-color: var(--vrl-hover-red-bg, #fff5f5) !important;
+    border-bottom: 1px solid rgba(214, 4, 18, 0.12) !important;
+}
+
+.pm-faq-button::after {
+    filter: none;
+    transition: transform 0.35s ease !important;
+}
+
+.pm-faq-answer {
+    line-height: 1.7 !important;
+    font-size: 0.96rem !important;
+}
+
+/* Sidebar Widgets */
+.pm-sidebar-cta-widget {
+    background: linear-gradient(135deg, var(--vrl-top-bg, #0e0e0e) 0%, var(--vrl-primary-red, #D60412) 100%);
+}
+
+.pm-widget-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 184, 0, 0.2), transparent 70%);
+}
+
+.pm-live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.3);
+}
+
+.pm-btn-call {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.pm-btn-call:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(4px);
+}
+
+.pm-sidebar-action-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.pm-btn-whatsapp {
+    background-color: #25D366;
+}
+
+.pm-btn-whatsapp:hover {
+    background-color: #1eb956;
+    color: var(--vrl-white, #ffffff);
+}
+
+
+/* ==========================================================================
+   Micro-Animations & Visual Effects
+   ========================================================================== */
+
+/* Call Button Pulse Wave Animation */
+@keyframes callPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(214, 4, 18, 0.45);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(214, 4, 18, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(214, 4, 18, 0);
+    }
+}
+
+/* Phone Icon Wiggle/Ring Animation */
+@keyframes phoneRing {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: rotate(-8deg); }
+    20%, 40%, 60%, 80% { transform: rotate(8deg); }
+}
+
+/* Floating Badge Animation */
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Live Support Pulsing Green Dot */
+.pm-live-dot, .pm-city-pulse-dot {
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.95); opacity: 0.9; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+/* Apply Call Pulse to CTA Buttons */
+.btn-danger.shadow, 
+.pm-cta-call-btn, 
+.pm-city-hero-call-btn {
+    animation: callPulse 2.5s infinite;
+}
+
+.btn-danger.shadow:hover i, 
+.pm-cta-call-btn:hover i, 
+.pm-city-hero-call-btn:hover i {
+    animation: phoneRing 1s ease-in-out;
+}
+
+/* About Slider Badge Floating Effect */
+.pm-about-badge-overlay {
+    animation: floatBadge 3.5s ease-in-out infinite;
+}
+
+/* Feature checklist hover animation */
+.pm-about-highlight-item, 
+.city-check-item {
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.pm-about-highlight-item:hover, 
+.city-check-item:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(214, 4, 18, 0.12) !important;
+}
+
+.city-check-item:hover .city-check-icon {
+    background-color: var(--vrl-primary-red, #D60412) !important;
+    color: var(--vrl-white, #ffffff) !important;
+    transform: rotate(360deg);
+}
+
+.city-check-icon {
+    transition: transform 0.5s ease, background-color 0.3s ease, color 0.3s ease !important;
+}
+
+/* Service Card Image Zoom & Lift */
+.pm-city-srv-card {
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-city-srv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(214, 4, 18, 0.14) !important;
+    border-color: rgba(214, 4, 18, 0.25) !important;
+}
+
+.pm-city-srv-card img {
+    transition: transform 0.5s ease;
+}
+
+.pm-city-srv-card:hover .btn-outline-danger {
+    background-color: var(--vrl-primary-red, #D60412);
+    color: var(--vrl-white, #ffffff);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991.98px) {
+    .pm-city-hero-title {
+        font-size: 2.1rem;
+    }
+    .pm-city-hero-desc {
+        font-size: 1rem;
+    }
+    .pm-about-slide-img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pm-city-hero-section {
+        min-height: auto;
+    }
+    .pm-city-hero-title {
+        font-size: 1.75rem;
+    }
+    .pm-city-section-title {
+        font-size: 1.6rem;
+    }
+    .pm-about-slide-img {
+        height: 240px;
+    }
+}

@@ -1,0 +1,364 @@
+/* ==========================================================================
+   Full Width Dynamic Breadcrumbs Banner - Vince Roadline
+   ========================================================================== */
+
+.dynamic-bc-section {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.vrl-bc-card {
+    background: #ffffff;
+    border-radius: 0;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.03);
+    width: 100%;
+}
+
+/* Background Curve & Red Gradient Swoosh on the right - Spans 100% edge to edge */
+.vrl-bc-swoosh-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.vrl-bc-swoosh-bg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Watermark dots overlay inside the right swoosh */
+.vrl-bc-swoosh-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+    pointer-events: none;
+}
+
+/* Circular Logo Badge on the swoosh boundary */
+.vrl-bc-logo-badge {
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    transform: translateY(-50%);
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 4px solid var(--vrl-accent-yellow, #ffb800);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.vrl-bc-logo-badge:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.vrl-bc-logo-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Card Left Content Area */
+.vrl-bc-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+/* Top Breadcrumbs Pill Navigation */
+.vrl-bc-pill-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1.5px solid var(--vrl-primary-red, #d9232d);
+    border-radius: 50px;
+    padding: 4px 18px 4px 4px;
+    box-shadow: 0 2px 10px rgba(217, 35, 45, 0.06);
+    margin-bottom: 22px;
+}
+
+.vrl-bc-home-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: var(--vrl-primary-red, #d9232d);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.vrl-bc-pill-nav a {
+    color: #333333;
+    font-weight: 600;
+    font-size: 0.86rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.vrl-bc-pill-nav a:hover {
+    color: var(--vrl-primary-red, #d9232d);
+}
+
+.vrl-bc-sep {
+    color: var(--vrl-primary-red, #d9232d);
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin: 0 1px;
+}
+
+.vrl-bc-current-pill {
+    color: var(--vrl-primary-red, #d9232d);
+    font-weight: 800;
+    font-size: 0.86rem;
+}
+
+/* Eyebrow Header */
+.vrl-bc-eyebrow {
+    color: var(--vrl-primary-red, #d9232d);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* Main H1 Title */
+.vrl-bc-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.vrl-bc-title .vrl-title-accent {
+    color: var(--vrl-primary-red, #d9232d);
+    font-style: italic;
+    font-weight: 900;
+}
+
+/* Title Underline Accent */
+.vrl-bc-title-underline {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+
+.vrl-bc-line-red {
+    width: 40px;
+    height: 4px;
+    background: var(--vrl-primary-red, #d9232d);
+    border-radius: 4px;
+}
+
+.vrl-bc-line-yellow {
+    width: 40px;
+    height: 4px;
+    background: var(--vrl-accent-yellow, #ffb800);
+    border-radius: 4px;
+}
+
+/* Description Text */
+.vrl-bc-desc {
+    color: #555555;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 580px;
+}
+
+/* Bottom Features Trust Capsule Bar */
+.vrl-bc-features-capsule {
+    background: #ffffff;
+    border: 1.5px solid #f1f5f9;
+    border-radius: 20px;
+    padding: 12px 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    max-width: 620px;
+}
+
+.vrl-bc-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.vrl-bc-feature-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background: #fff5f5;
+    border: 1.5px solid rgba(217, 35, 45, 0.3);
+    color: var(--vrl-primary-red, #d9232d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.vrl-bc-feature-title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+
+.vrl-bc-feature-sub {
+    font-size: 0.68rem;
+    color: #666666;
+    line-height: 1.2;
+}
+
+.vrl-bc-feature-divider {
+    width: 1px;
+    height: 32px;
+    background: #e2e8f0;
+    flex-shrink: 0;
+}
+
+/* Bottom Divider Line with Box Icon */
+.vrl-bc-bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    max-width: 500px;
+}
+
+.vrl-bc-bottom-line .line-left,
+.vrl-bc-bottom-line .line-right {
+    height: 2px;
+    flex: 1;
+}
+
+.vrl-bc-bottom-line .line-left {
+    background: linear-gradient(90deg, transparent 0%, var(--vrl-accent-yellow, #ffb800) 100%);
+}
+
+.vrl-bc-bottom-line .line-right {
+    background: linear-gradient(90deg, var(--vrl-primary-red, #d9232d) 0%, transparent 100%);
+}
+
+.vrl-bc-bottom-line i {
+    font-size: 14px;
+    color: var(--vrl-primary-red, #d9232d);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+    .vrl-bc-card {
+        padding: 30px 0;
+    }
+
+    .vrl-bc-swoosh-bg {
+        width: 55%;
+        opacity: 0.9;
+    }
+
+    .vrl-bc-logo-badge {
+        width: 115px;
+        height: 115px;
+        right: 3%;
+    }
+
+    .vrl-bc-title {
+        font-size: 2rem;
+    }
+
+    .vrl-bc-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .vrl-bc-card {
+        padding: 24px 0;
+    }
+
+    /* Hide swoosh & logo badge on mobile view */
+    .vrl-bc-swoosh-bg {
+        display: none !important;
+    }
+
+    .vrl-bc-logo-badge {
+        display: none !important;
+    }
+
+    .vrl-bc-title {
+        font-size: 1.65rem;
+    }
+
+    .vrl-bc-pill-nav {
+        max-width: 100%;
+        flex-wrap: wrap;
+        padding: 3px 12px 3px 3px;
+    }
+
+    .vrl-bc-home-icon {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        font-size: 12px;
+    }
+
+    .vrl-bc-pill-nav a,
+    .vrl-bc-current-pill {
+        font-size: 0.78rem;
+    }
+
+    .vrl-bc-features-capsule {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .vrl-bc-feature-divider {
+        width: 100%;
+        height: 1px;
+    }
+}

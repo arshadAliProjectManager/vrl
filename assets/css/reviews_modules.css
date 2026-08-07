@@ -1,0 +1,261 @@
+﻿/* reviews_modules.css */
+
+/* reviews.php and single_review.php */
+.reviews-service-page {
+    min-height: 50vh;
+    background-image: url('../images/location/location-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding: 30px 0;
+    color: #000;
+}
+.reviews-feature-content-section {
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+.reviews-header-wrap {
+    border-bottom: 2px solid #f1f5f9;
+    position: relative;
+}
+.reviews-header-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #001333;
+}
+.reviews-write-btn {
+    background: #0a4ebd;
+    border-color: #0a4ebd;
+    font-weight: 700;
+}
+.reviews-header-line {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ff6600;
+}
+.reviews-fade-in {
+    visibility: visible;
+    animation: fadeInUp 0.6s ease-in-out;
+}
+.reviews-write-review-btn {
+    background-color: #e21b22;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+.reviews-single-review {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.reviews-single-review:hover {
+    transform: scale(1.02);
+}
+.reviews-review-icon {
+    align-self: center;
+    max-width: 70px;
+    margin-bottom: 10px;
+}
+.reviews-review-img {
+    width: 100%;
+    border-radius: 50%;
+}
+.reviews-review-content {
+    flex-grow: 1;
+}
+.reviews-review-author {
+    color: #f4854a;
+    font-size: 0.9rem;
+}
+.reviews-author-name {
+    background-color: #000;
+    padding: 3px;
+    border-radius: 5px;
+    color: #fff;
+}
+.reviews-review-date {
+    color: #555;
+    font-size: 0.8rem;
+}
+.reviews-review-rating {
+    margin-top: 10px;
+}
+.reviews-rating-value {
+    color: #000;
+    font-weight: bold;
+}
+.reviews-review-title {
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+.reviews-review-body {
+    color: #000;
+    margin: 5px 0;
+}
+.reviews-review-email {
+    font-weight: bold;
+    color: #555;
+}
+.reviews-no-reviews-text {
+    color: #888;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px auto;
+}
+.reviews-read-more-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+.reviews-read-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* single_review.php extra styles */
+.reviews-single-content {
+    padding: 25px 15px;
+    transition: .5s;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 12px;
+}
+.reviews-content-text {
+    padding: 0 10px 0 0;
+}
+.reviews-content-text h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    padding: 0px 0 4px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .reviews-content-text h4 {
+        font-size: 18px;
+    }
+}
+.reviews-btn-write-review {
+    background:#f4854a;
+    color:white;
+    border:none;
+    width:100%;
+    font-size:100%;
+    font-weight:bold;
+}
+.reviews-author-badge {
+    color:white;
+    background-color:black;
+    padding:5px;
+    border-radius:5px;
+}
+.reviews-float-right-span {
+    float: right;
+}
+.reviews-star-saver-black {
+    color:black;
+}
+.reviews-title-black {
+    font-weight: bold;
+    color:black;
+    margin-top: 5px;
+}
+.reviews-text-black {
+    color:black;
+}
+.reviews-text-black-bold {
+    font-weight: bold;
+    color:black;
+}
+.reviews-date-yellow {
+    color:#fab504;
+}
+.reviews-reply-box {
+    padding-top: 20px; 
+    color:black;
+}
+.reviews-reply-box b {
+    font-weight:bold;
+}
+.reviews-reply-text {
+    text-align: right;
+}
+
+/* reviewmodal.php */
+.reviews-modal-content {
+    background: linear-gradient(107.2deg, rgb(150, 15, 15) 10.6%, rgb(247, 0, 0) 91.1%);
+}
+.reviews-modal-title {
+    color: white; 
+    font-size: 20px;
+    font-weight:bold;
+    line-height:1;
+}
+.reviews-modal-close {
+    color: red; 
+    font-size: 30px; 
+    margin-right: 15px;
+}
+.reviews-modal-label {
+    color: white; 
+    display: block;
+}
+.reviews-modal-file {
+    color:white;
+}
+.reviews-modal-submit {
+    background-color: #FBA707;
+}
+.reviews-modal-clear {
+    background-color: white; 
+    color: #A0A0A0;
+}
+
+.reviews-rating {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: row-reverse;
+    position: relative;
+}
+.reviews-rating>input {
+    display: none;
+}
+.reviews-rating>label {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: auto;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 76%;
+    transition: .3s;
+}
+.reviews-rating>input:checked~label,
+.reviews-rating>input:checked~label~label {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
