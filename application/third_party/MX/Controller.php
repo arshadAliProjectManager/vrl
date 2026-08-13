@@ -51,8 +51,8 @@ class MX_Controller
         $this->load = clone load_class('Loader');
         $this->load->initialize($this);
 
-        $this->comp['phone'] = '+91 9996340820';
-        $this->comp['phonehtml'] = 'tel:+919996340820';
+        $this->comp['phone'] = '+91 9996925025';
+        $this->comp['phonehtml'] = 'tel:+919996925025';
         $this->comp['phone1'] = '+91 0000000000';
         $this->comp['phonehtml1'] = 'tel:+910000000000';
         $this->comp['supportmail'] = 'support@mycompany.com';
@@ -67,7 +67,7 @@ class MX_Controller
         $this->comp['instagramhtml'] = "";
         $this->comp['twitterhtml'] = "";
         $this->comp['linkedinhtml'] = "";
-        $this->comp['whatsapphtml'] = "https://wa.me/919996340820";
+        $this->comp['whatsapphtml'] = "https://wa.me/919996925025";
 
         $this->comp['address'] = "H.No. 07, Vikaas Colony, near Loha Mandi, Vikas Nagar, Adampur, Haryana 125052";
         $this->comp['address1'] = "H.No. 07, Vikaas Colony, near Loha Mandi, Vikas Nagar";

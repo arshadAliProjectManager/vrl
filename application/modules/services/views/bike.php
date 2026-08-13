@@ -461,18 +461,18 @@
     <!-- ============ SECTION 6: HIGH-IMPACT CALL-TO-ACTION BANNER ============ -->
     <div class="vrl-about-cta-card p-4 p-md-5 text-center text-md-start">
       <div class="row align-items-center g-4 position-relative z-2">
-        <div class="col-lg-8">
+        <div class="col-lg-7 col-xl-6">
           <span class="badge bg-warning text-dark fw-bold px-3 py-1.5 rounded-pill mb-2 fs-7">Ready To Ship Your Bike?</span>
           <h3 class="fw-bold text-white mb-2 fs-3">Book Safe &amp; Scratch-Free Bike Transportation Today</h3>
           <p class="text-white-50 mb-0 fs-6">Contact our senior vehicle relocation specialist for a free quote and instant discount estimate.</p>
         </div>
 
-        <div class="col-lg-4 text-center text-lg-end">
-          <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
-            <a href="<?= $phonehtml ?>" class="btn vrl-about-cta-btn-call rounded-pill text-decoration-none d-inline-flex align-items-center justify-content-center gap-2">
+        <div class="col-lg-5 col-xl-6 text-center text-lg-end">
+          <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-3 align-items-center">
+            <a href="<?= $phonehtml ?>" class="btn vrl-about-cta-btn-call rounded-pill text-decoration-none d-inline-flex align-items-center justify-content-center gap-2 text-nowrap">
               <i class="bi bi-telephone-fill text-danger"></i> Call <?= htmlspecialchars($phone) ?>
             </a>
-            <button type="button" class="btn vrl-about-cta-btn-quote rounded-pill d-inline-flex align-items-center justify-content-center gap-2" data-bs-toggle="modal" data-bs-target="#qteModal">
+            <button type="button" class="btn vrl-about-cta-btn-quote rounded-pill d-inline-flex align-items-center justify-content-center gap-2 text-nowrap" data-bs-toggle="modal" data-bs-target="#qteModal">
               <i class="bi bi-calculator-fill"></i> Get Free Quote
             </button>
           </div>

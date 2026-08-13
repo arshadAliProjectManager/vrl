@@ -301,9 +301,10 @@
     background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
     color: var(--vrl-dark-text, #111111) !important;
     border: none;
-    padding: 14px 28px;
+    padding: 12px 24px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    white-space: nowrap !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     animation: callPulse 2.5s infinite;
     transition: all 0.3s ease;
@@ -320,9 +321,10 @@
     background: var(--vrl-accent-yellow, #FFB800) !important;
     color: var(--vrl-dark-text, #111111) !important;
     border: none;
-    padding: 14px 28px;
+    padding: 12px 24px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    white-space: nowrap !important;
     box-shadow: 0 8px 24px rgba(255, 184, 0, 0.3);
     transition: all 0.3s ease;
 }
