@@ -53,12 +53,10 @@ class MX_Controller
 
         $this->comp['phone'] = '+91 9996925025';
         $this->comp['phonehtml'] = 'tel:+919996925025';
-        $this->comp['phone1'] = '+91 0000000000';
-        $this->comp['phonehtml1'] = 'tel:+910000000000';
         $this->comp['supportmail'] = 'support@mycompany.com';
         $this->comp['replyToMail'] = 'support@mycompany.com';
-        $this->comp['mail'] = 'support@mycompany.com';    
-        $this->comp['mailhtml'] = "mailto:support@mycompany.com";
+        $this->comp['mail'] = 'info@vrlpackersmovers.co';    
+        $this->comp['mailhtml'] = "mailto:info@vrlpackersmovers.co";
         $this->comp['company3'] = 'Vince Roadline Packers and Movers';
         $this->comp['companydomain'] = 'mycompany.com';
 
