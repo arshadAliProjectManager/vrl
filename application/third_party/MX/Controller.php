@@ -51,8 +51,8 @@ class MX_Controller
         $this->load = clone load_class('Loader');
         $this->load->initialize($this);
 
-        $this->comp['phone'] = '+91 9996925025';
-        $this->comp['phonehtml'] = 'tel:+919996925025';
+        $this->comp['phone'] = '+91 9588385088';
+        $this->comp['phonehtml'] = 'tel:+919588385088';
         $this->comp['supportmail'] = 'support@mycompany.com';
         $this->comp['replyToMail'] = 'support@mycompany.com';
         $this->comp['mail'] = 'info@vrlpackersmovers.co';    
@@ -65,15 +65,15 @@ class MX_Controller
         $this->comp['instagramhtml'] = "";
         $this->comp['twitterhtml'] = "";
         $this->comp['linkedinhtml'] = "";
-        $this->comp['whatsapphtml'] = "https://wa.me/919996925025";
+        $this->comp['whatsapphtml'] = "https://wa.me/919588385088";
 
         $this->comp['address'] = "H.No. 07, Vikaas Colony, near Loha Mandi, Vikas Nagar, Adampur, Haryana 125052";
         $this->comp['address1'] = "H.No. 07, Vikaas Colony, near Loha Mandi, Vikas Nagar";
         $this->comp['address2'] = "Adampur, Haryana 125052";
 
-        $this->comp['branchAddress'] = "No 4 4th Cross Road N 7 Kiadb Export Promotion 4th Cross Industrial Area Whitefield Opp To Opp Showroom Bengaluru Karnataka 560066";
-        $this->comp['branchAddress1'] = "No 4 4th Cross Road N 7 Kiadb Export Promotion 4th Cross Industrial Area Whitefield Opp To Opp Showroom";
-        $this->comp['branchAddress2'] = "Bengaluru, Karnataka 560066";
+        $this->comp['branchAddress'] = "Main Road, 108, 17th A Main Road, near Venkateshwara Club, KHB Colony, 6th Block, Koramangala, Bengaluru, Karnataka 560095";
+        $this->comp['branchAddress1'] = "Main Road, 108, 17th A Main Road, near Venkateshwara Club, KHB Colony, 6th Block";
+        $this->comp['branchAddress2'] = "Koramangala, Bengaluru, Karnataka 560095";
         $this->comp['branchAddressRegion'] = "Bengaluru";
         $this->comp['branchPostalCode'] = "560066";
         $this->comp['branchState'] = "Karnataka";
