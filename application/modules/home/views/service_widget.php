@@ -66,7 +66,7 @@ $services = [
             <h3 class="vrl-location-title mb-0">Packers and Movers in Adampur</h3>
           </div>
           <p class="vrl-location-text mb-0">
-            If you are looking for Packers and Movers in Adampur, then our headquarters is at: <strong>H.No. 07, Vikaas Colony, near Loha Mandi, Vikas Nagar, Adampur, Haryana 125052</strong>. Clients can reach out to us for domestic moves, office shifts, vehicles shifting and packing services.
+            If you are looking for Packers and Movers in Adampur, then our headquarters is at: <strong><?= $address ?></strong>. Clients can reach out to us for domestic moves, office shifts, vehicles shifting and packing services.
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ $services = [
             <h3 class="vrl-location-title mb-0">Packers and Movers in Bengaluru</h3>
           </div>
           <p class="vrl-location-text mb-0">
-            We provide our Packers and Movers in Bengaluru via our Whitefield branch: <strong>No. 4, 4th Cross Road, N 7 KIADB Export Promotion, 4th Cross Industrial Area, Whitefield, Opp. to OPPO Showroom, Bengaluru, Karnataka 560066</strong>.
+            We provide our Packers and Movers in Bengaluru via our Whitefield branch: <strong><?= $branchAddress ?></strong>.
           </p>
         </div>
       </div>
